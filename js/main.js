@@ -17,6 +17,11 @@ function sumarPrecios() {
     let producto2 = document.getElementById("producto2").value;
     let producto3 = document.getElementById("producto3").value;
 
+    //filtro para (input vacio = 0).    
+    producto1 = producto1 === "" ? "0" : producto1;
+    producto2 = producto2 === "" ? "0" : producto2;
+    producto3 = producto3 === "" ? "0" : producto3;
+
     // cambiar de string a numero:
     let numero1 = parseFloat(producto1);
     let numero2 = parseFloat(producto2);
@@ -26,13 +31,12 @@ function sumarPrecios() {
     if (isNaN(numero1) || isNaN(numero2) || isNaN(numero3)) {
         document.getElementById("resultado").textContent = "Por favor, ingrese solo numeros";
     } else {
-        
+
         // sumar todo
         let suma = numero1 + numero2 + numero3;
 
         //imprimir
         document.getElementById("resultado").textContent = "La suma es: " + suma;
-
     }
 }
 
