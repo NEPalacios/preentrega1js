@@ -22,11 +22,18 @@ function sumarPrecios() {
     let numero2 = parseFloat(producto2);
     let numero3 = parseFloat(producto3);
 
-    // sumar todo
-    let suma = numero1 + numero2 + numero3;
+    //condicional:
+    if (isNaN(numero1) || isNaN(numero2) || isNaN(numero3)) {
+        document.getElementById("resultado").textContent = "Por favor, ingrese solo numeros";
+    } else {
+        
+        // sumar todo
+        let suma = numero1 + numero2 + numero3;
 
-    //imprimir
-    document.getElementById("resultado").textContent = "La suma es: " + suma;
+        //imprimir
+        document.getElementById("resultado").textContent = "La suma es: " + suma;
 
+    }
 }
+
 
